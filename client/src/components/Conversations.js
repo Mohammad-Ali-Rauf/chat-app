@@ -7,7 +7,7 @@ const Conversations = () => {
   const { conversations, selectConversationIndex } = useConversations();
 
   return (
-    <ListGroup>
+    <ListGroup variant='flush'>
       {conversations.map((conversation, index) => (
         <ListGroup.Item onClick={() => selectConversationIndex(index)} key={index} action active={conversation.selected}>
           {conversation.recipients.map(r => r.name).join(', ')}

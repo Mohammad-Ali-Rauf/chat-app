@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "private": true,
+  "version": "1.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "Mohammad Ali",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

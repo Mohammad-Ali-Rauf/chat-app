@@ -2,6 +2,7 @@ import React from 'react';
 import useLocalStorage from './hooks/useLocalStorage';
 import { ContactsProvider } from './context/ContactsContext';
 import { ConversationsProvider } from './context/ConversationsContext';
+import { SocketProvider } from './context/SocketContext';
 
 // Import Components
 import Login from './components/Login';
@@ -12,11 +13,13 @@ const App = () => {
   const [id, setId] = useLocalStorage('id');
   
   const dashboard = (
-    <ContactsProvider>
-      <ConversationsProvider>
-        <Dashboard id={id} />
-      </ConversationsProvider>
-    </ContactsProvider>
+    <SocketProvider id={id}>
+      <ContactsProvider>
+        <ConversationsProvider id={id}>
+          <Dashboard id={id} />
+        </ConversationsProvider>
+      </ContactsProvider>
+    </SocketProvider>
   )
 
   return (
